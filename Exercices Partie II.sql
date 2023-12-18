@@ -1,4 +1,4 @@
-/* Partie 1 */
+/* Partie 2 */
 
 /*Exercice 1*/
 
@@ -201,8 +201,7 @@ INNER JOIN Articles AS A ON F.RefArt = A.RefArt
 GROUP BY F.RefArt, A.Designation
 HAVING COUNT(F.RefArt) >= 3;
 
-SELECT C.nom, C.prenom, F.RefArt, A.Designation, F.Depart, F.Retour, T.PrixJour,
-       SUM(T.PrixJour) OVER() AS Total
+SELECT C.nom, C.prenom, F.RefArt, A.Designation, F.Depart, F.Retour, T.PrixJour, SUM(T.PrixJour) OVER() AS Total
 FROM Fiches AS F
 INNER JOIN Clients AS C ON F.NoCli = C.noCli
 INNER JOIN Articles AS A ON F.RefArt = A.RefArt
